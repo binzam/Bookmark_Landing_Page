@@ -45,3 +45,35 @@ emailForm.addEventListener('submit', (event) => {
     }, 2000);
   }
 });
+
+// function to make browser logos rotate when they are in view
+const browserLogos = document.querySelectorAll('.browser_logo');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('rotate'); 
+    } else {
+      entry.target.classList.remove('rotate');
+    }
+  });
+  
+});
+
+browserLogos.forEach((logo) => observer.observe(logo));
+
+
+// nav menu control
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("open-menu-btn");
+  const mobileNav = document.getElementById("mobile-nav");
+  const closeBtn = document.getElementById("close-menu-btn");
+
+  menuToggle.addEventListener("click", () => {
+    mobileNav.classList.add("active");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    mobileNav.classList.remove("active");
+  });
+});
