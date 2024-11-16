@@ -253,22 +253,21 @@ img {
 .feature_content {
   width: 100%;
   height: auto;
-  position: relative;
+  /* position: relative; */
 }
 
 .tab_content {
   padding: 4.3rem 10.5rem 5.5rem;
   position: relative;
   display: none;
-  max-height: 507px;
+  /* max-height: 507px; */
+  gap: 3rem;
 }
 .tab_content.active {
   width: 100%;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 3rem;
 }
 .feature_img {
   display: flex;
@@ -318,13 +317,13 @@ img {
   justify-content: center;
 }
 
-.feature_text h3 {
+.feature_ttl {
   font-size: 1.8rem;
   font-weight: 500;
   color: var(--VeryDarkBlue);
 }
 
-.feature_text p {
+.feature_txt {
   font-size: 1.1rem;
   color: var(--GrayishBlue);
   margin: 2rem 0;
@@ -366,6 +365,7 @@ img {
 }
 
 .extension_cards {
+  width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -376,7 +376,7 @@ img {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 30px 25px 25px;
+  padding: 1.875rem 1.5rem 1.5rem;
   width: 285px;
   text-align: center;
   transition: transform 0.2s ease;
@@ -399,6 +399,7 @@ img {
 .browser_logo {
   width: 102px;
   height: 100px;
+  object-fit: contain;
 }
 .browser_logo.rotate {
   animation: rotateClockwise 1s linear;
@@ -414,14 +415,14 @@ img {
 .card_ttl {
   font-size: 1.2rem;
   font-weight: 500;
-  margin: 2rem 0 18px;
+  margin: 2rem 0 1.125rem;
   color: var(--VeryDarkBlue);
 }
 
 .card_txt {
   font-size: 0.9rem;
   color: var(--GrayishBlue);
-  margin-bottom: 67px;
+  margin-bottom: 4.18rem;
 }
 
 .card button {
@@ -689,12 +690,20 @@ img {
 .social_icon:hover {
   fill: var(--SoftRed);
 }
+@media only screen and (max-width: 1300px) {
+  .second .pill {
+    left: -27rem;
+  }
+}
 @media only screen and (max-width: 1250px) {
   .tab_content {
     padding: 4.3rem 2.5rem 5.5rem;
   }
-  .second .pill {
-    left: -27rem;
+  .extension_section {
+    padding: 5rem 5.5rem;
+  }
+  .faq_section {
+    padding: 5rem 7.5rem 9.3rem;
   }
 }
 @media only screen and (max-width: 1200px) {
@@ -718,6 +727,9 @@ img {
   .top .pill {
     right: -19rem;
   }
+  .faq_section {
+    padding: 5rem 5.5rem 9.3rem;
+  }
 }
 @media only screen and (max-width: 1000px) {
   .header {
@@ -725,34 +737,6 @@ img {
   }
   .top {
     padding: 4rem 0rem 4rem 2rem;
-  }
-  .tab_content {
-    padding: 3rem 2rem 3.5rem;
-  }
-  .feature_img.one,
-  .feature_img.two,
-  .feature_img.three {
-    max-width: 46%;
-  }
-  .top .pill {
-    right: -24rem;
-    height: 200px;
-    bottom: 0rem;
-  }
-  .second .pill {
-    left: -37rem;
-    height: 200px;
-  }
-  .feature_text{
-    max-width: 360px;
-  }
-  .feature_text h3 {
-    font-size: 1.5rem;
-  }
-  
-  .feature_text p{
-    margin: 1rem 0;
-    font-size: 1rem;
   }
   .top_text {
     max-width: 50%;
@@ -762,9 +746,74 @@ img {
   }
   .top_txt {
     font-size: 1rem;
+    margin: 1.25rem 0 1.8rem;
   }
   .top_image {
     max-width: 45%;
+  }
+  .top .pill {
+    right: -24rem;
+    height: 200px;
+    bottom: 0rem;
+  }
+  .second_ttl {
+    font-size: 2rem;
+    line-height: 1;
+  }
+  .second_txt {
+    font-size: 1rem;
+    margin: 1rem auto 2rem;
+  }
+  .tab_content {
+    padding: 3.875rem 2rem 3.5rem;
+  }
+  .feature_img.one,
+  .feature_img.two,
+  .feature_img.three {
+    max-width: 46%;
+  }
+
+  .second .pill {
+    left: -37rem;
+    height: 200px;
+  }
+  .feature_text {
+    max-width: 360px;
+  }
+  .feature_ttl {
+    font-size: 1.5rem;
+  }
+
+  .feature_txt {
+    margin: 1rem 0 0;
+    font-size: 1rem;
+  }
+
+  .extension_section {
+    padding: 4rem 3rem;
+  }
+  .third_ttl {
+    font-size: 1.6rem;
+  }
+  .third_txt {
+    max-width: 70%;
+    font-size: 1rem;
+    margin: 1rem auto 2.5rem;
+  }
+  .extension_cards {
+    flex-wrap: wrap;
+  }
+  .card.mt-40,
+  .card.mt-80 {
+    margin: 0;
+  }
+  .faq_section {
+    padding: 5rem 3rem 9.3rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .feature_text {
+    max-width: 320px;
   }
 }
 @media only screen and (max-width: 769px) {
@@ -867,14 +916,18 @@ img {
   /* END HEADER */
   /* TOP SECTION */
   .top {
-    padding: 2rem 0rem 2rem 0;
+    padding: 2rem 0rem 4.5rem 0;
+  }
+  .top_ttl {
+    font-size: 1.8rem;
   }
   .top .pill {
     height: 175px;
   }
+
   .top_content {
+    gap: 2.8rem;
     flex-direction: column-reverse;
-    gap: 3rem;
   }
   .top_image {
     max-width: 100%;
@@ -889,23 +942,112 @@ img {
     justify-content: center;
   }
   /* SECOND SECTION */
-  .features_tabs{
-    width: 100%;
+  .second {
+    padding-bottom: 1rem;
+  }
+  .feature_text {
+    text-align: center;
+    max-width: 70%;
+  }
+
+  .second_ttl {
+    font-size: 1.5rem;
+  }
+  .second_txt {
+    max-width: 70%;
+    line-height: 1.3;
+    font-size: 0.9rem;
+  }
+  .features_tabs {
+    width: calc(100% - 3.5rem);
     flex-direction: column;
+    border-top: 1px solid var(--LightGrayishBlue);
   }
-  .tab{
+  .tab {
+    padding: 1rem 0;
+    font-size: 1rem;
+  }
+  .tab_wrap {
     width: 100%;
+    height: 100%;
+    border-bottom: 1px solid var(--LightGrayishBlue);
   }
-  .tab_content{
+  .tab_wrap.no_border {
+    border-bottom: none;
+  }
+  .tab_content {
+    padding: 3.875rem 1.75rem 3.5rem;
     flex-direction: column;
+    max-height: max-content;
+    gap: 4.5rem;
   }
-  .more_info_btn{
+  .second .pill {
+    height: 175px;
+    bottom: 15rem;
+    left: -30rem;
+  }
+  .feature_img.one,
+  .feature_img.two,
+  .feature_img.three {
+    width: 100%;
+    max-width: 400px;
+    margin: 0;
+    max-height: 350px;
+  }
+
+  .more_info_btn.hide {
     display: none;
+  }
+  /* END SECOND SECTION */
+  /* THIRD SECTION: EXTENSTIONS */
+  .extension_section {
+    padding: 4rem 2.5rem;
+  }
+  .extension_cards {
+    gap: 3.5rem;
+  }
+  .card {
+    padding: 1.25rem;
+  }
+
+  .browser_logo.chrome {
+    width: 88px;
+    height: 87px;
+  }
+  .browser_logo.fire_fox {
+    width: 91px;
+    height: 88px;
+  }
+  .browser_logo.opera {
+    width: 84px;
+    height: 88px;
+  }
+  .card_ttl {
+    font-size: 1.1rem;
+    margin: 1.75rem 0 0.9rem;
+  }
+  .card_txt {
+    font-size: 0.8rem;
+    margin-bottom: 3.5rem;
+  }
+  .card button {
+    height: 41px;
+  }
+  .faq_section {
+    padding: 5rem 1.75rem 9.3rem;
   }
 }
 @media only screen and (max-width: 600px) {
   .top_text {
     max-width: 90%;
+  }
+  .second_txt {
+    max-width: 100%;
+    padding: 0 1.75rem;
+  }
+
+  .card {
+    width: 90%;
   }
 }
 @media only screen and (max-width: 500px) {
@@ -923,7 +1065,6 @@ img {
     font-size: 1.6rem;
   }
   .top_txt {
-    margin: 1.25rem auto 1.875rem;
     font-size: 0.9rem;
     line-height: 1.5;
   }
@@ -937,5 +1078,49 @@ img {
   }
   .firefox_btn {
     width: 125px;
+  }
+  .second .pill {
+    left: -38rem;
+  }
+  .feature_img.one,
+  .feature_img.two,
+  .feature_img.three {
+    max-width: 100%;
+    width: 100%;
+    height: 175px;
+  }
+  .second_ttl {
+    font-size: 1.25rem;
+  }
+  .second_txt {
+    line-height: 1.5;
+    font-size: 0.88rem;
+  }
+  .tab {
+    font-size: 0.88rem;
+    padding: 0.9rem 0;
+  }
+  .feature_text {
+    max-width: 100%;
+  }
+  .feature_ttl {
+    font-size: 1.29rem;
+  }
+  .feature_txt {
+    font-size: 0.91rem;
+  }
+  .extension_section {
+    padding: 4rem 1.75rem;
+  }
+  .third_ttl {
+    font-size: 1.29rem;
+  }
+  .third_txt {
+    max-width: 100%;
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+  .card {
+    width: 100%;
   }
 }
