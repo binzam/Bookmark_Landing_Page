@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("open-menu-btn");
   const mobileNav = document.getElementById("mobile-nav");
   const closeBtn = document.getElementById("close-menu-btn");
+  const navLinks = document.querySelectorAll(".mob_nav_link");
 
   menuToggle.addEventListener("click", () => {
     mobileNav.classList.add("active");
@@ -75,5 +76,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   closeBtn.addEventListener("click", () => {
     mobileNav.classList.remove("active");
+  });
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileNav.classList.remove("active");
+    });
   });
 });
